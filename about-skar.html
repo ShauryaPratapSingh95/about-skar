@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About SKAR | Official Creator Page</title>
+
+    <meta name="theme-color" content="#0b0b0b">
+
+    <meta
+        name="description"
+        content="Discover SKAR, founded by Shaurya Pratap Singh, and explore applications created under the SKAR brand."
+    >
+
+    <style>
+        /* =========================
+           GLOBAL SETTINGS
+        ========================= */
+
+        :root {
+            --background: #080808;
+            --surface: #121212;
+            --surface-light: #1b1b1b;
+            --primary: #ff2525;
+            --primary-light: #ff5252;
+            --text: #ffffff;
+            --muted: #aaaaaa;
+            --border: rgba(255, 37, 37, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        .red {
+            color: var(--primary);
+        }
+
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(28px, 5vw, 42px);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto 45px;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-content {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #dddddd;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-button {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: white;
+            padding: 7px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    ellipse at 50% 40%,
+                    rgba(255, 25, 25, 0.15),
+                    transparent 60%
+                );
+        }
+
+        .hero-content {
+            padding: 90px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 7px 18px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            background: rgba(255, 37, 37, 0.08);
+            color: var(--primary-light);
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 12vw, 110px);
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-shadow: 0 0 35px rgba(255, 37, 37, 0.25);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 3vw, 23px);
+            color: #dddddd;
+            margin-top: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: 20px auto 30px;
+            color: var(--muted);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 9px;
+            font-weight: bold;
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s,
+                background 0.3s;
+        }
+
+        .button-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 25px rgba(255, 37, 37, 0.2);
+        }
+
+        .button-primary:hover {
+            background: #e81717;
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(255, 37, 37, 0.4);
+        }
+
+        .button-outline {
+            border: 1px solid var(--border);
+            margin-left: 10px;
+        }
+
+        .button-outline:hover {
+            background: rgba(255, 37, 37, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           DEVELOPER PROFILE
+        ========================= */
+
+        .profile-card {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #181818,
+                    #0e0e0e
+                );
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            transition:
+                transform 0.3s,
+                border-color 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .profile-icon {
+            min-width: 125px;
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 50px;
+            background: linear-gradient(135deg, #ff2525, #650000);
+            box-shadow: 0 0 35px rgba(255, 37, 37, 0.2);
+        }
+
+        .profile-info h3 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .profile-role {
+            color: var(--primary-light);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .detail-badge {
+            padding: 7px 12px;
+            background: #222222;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #dddddd;
+        }
+
+        /* =========================
+           ABOUT SKAR
+        ========================= */
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            padding: 40px;
+            background: var(--surface);
+            border: 1px solid #292929;
+            border-radius: 18px;
+        }
+
+        .about-box h3 {
+            color: var(--primary-light);
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .about-box p {
+            color: #c4c4c4;
+            margin-bottom: 15px;
+        }
+
+        .about-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           APP CARDS
+        ========================= */
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .app-card {
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            background: var(--surface);
+            border: 1px solid #292929;
+            border-radius: 18px;
+            transition:
+                transform 0.3s,
+                border-color 0.3s,
+                box-shadow 0.3s;
+        }
+
+        .app-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(
+                90deg,
+                var(--primary),
+                transparent
+            );
+        }
+
+        .app-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(255, 37, 37, 0.08);
+        }
+
+        .app-icon {
+            width: 75px;
+            height: 75px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            background: linear-gradient(135deg, #ff2525, #500000);
+            font-size: 37px;
+            margin-bottom: 23px;
+        }
+
+        .app-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .app-category {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--primary-light);
+            background: rgba(255, 37, 37, 0.1);
+            padding: 5px 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .app-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .app-features {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .app-features li {
+            padding: 7px 0;
+            color: #cccccc;
+            border-bottom: 1px solid #252525;
+            font-size: 14px;
+        }
+
+        .app-features li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* =========================
+           FUTURE APPLICATIONS
+        ========================= */
+
+        .future-card {
+            text-align: center;
+            max-width: 850px;
+            margin: 45px auto 0;
+            padding: 35px;
+            border: 1px dashed #633030;
+            background: rgba(255, 37, 37, 0.035);
+            border-radius: 18px;
+        }
+
+        .future-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .future-card h3 {
+            margin-bottom: 10px;
+            font-size: 23px;
+        }
+
+        .future-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           VISION SECTION
+        ========================= */
+
+        .vision-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            padding: 45px 30px;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(255, 37, 37, 0.12),
+                    transparent 75%
+                ),
+                var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .vision-box h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .vision-box p {
+            max-width: 650px;
+            margin: auto;
+            color: #c4c4c4;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 0;
+            border-top: 1px solid #252525;
+            text-align: center;
+            background: #050505;
+        }
+
+        .footer-logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #888888;
+        }
+
+        .footer-note {
+            margin-top: 10px;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* =========================
+           MOBILE RESPONSIVENESS
+        ========================= */
+
+        @media (max-width: 750px) {
+            .nav-content {
+                min-height: 68px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 5%;
+                background: #101010;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                letter-spacing: 4px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .profile-details {
+                justify-content: center;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-box {
+                padding: 28px 20px;
+            }
+
+            .button-outline {
+                margin-left: 0;
+                margin-top: 12px;
+            }
+
+            .app-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a href="#home" class="logo" aria-label="SKAR home">
+                SKAR<span>.</span>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                ☰
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#developer">Developer</a>
+                <a href="#about">About SKAR</a>
+                <a href="#apps">Our Apps</a>
+                <a href="#vision">Vision</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container hero-content">
+
+                <div class="hero-badge">
+                    OFFICIAL SKAR CREATOR PAGE
+                </div>
+
+                <h1>SKAR<span>.</span></h1>
+
+                <p class="hero-subtitle">
+                    Creativity Meets Technology
+                </p>
+
+                <p class="hero-description">
+                    Discover SKAR, the technology brand founded by
+                    Shaurya Pratap Singh, and explore applications
+                    created under the SKAR name.
+                </p>
+
+                <a href="#apps" class="button button-primary">
+                    Explore Our Apps
+                </a>
+
+                <a href="#about" class="button button-outline">
+                    About SKAR
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- DEVELOPER PROFILE -->
+
+        <section class="section" id="developer">
+            <div class="container">
+
+                <h2 class="section-title">
+                    Meet the <span class="red">Developer</span>
+                </h2>
+
+                <p class="section-description">
+                    The person behind the SKAR brand and its applications.
+                </p>
+
+                <div class="profile-card reveal">
+
+                    <div class="profile-icon" aria-hidden="true">
+                        👨‍💻
+                    </div>
+
+                    <div class="profile-info">
+
+                        <h3>Shaurya Pratap Singh</h3>
+
+                        <p class="profile-role">
+                            Founder &amp; Developer of SKAR
+                        </p>
+
+                        <p style="color: #aaaaaa;">
+                            Interested in technology, programming,
+                            creativity, and building useful digital
+                            applications.
+                        </p>
+
+                        <div class="profile-details">
+
+                            <span class="detail-badge">
+                                🎂 Age: 9 Years Old
+                            </span>
+
+                            <span class="detail-badge">
+                                🇮🇳 India
+                            </span>
+
+                            <span class="detail-badge">
+                                💻 Developer
+                            </span>
+
+                            <span class="detail-badge">
+                                🔴 SKAR Founder
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ABOUT SKAR -->
+
+        <section class="section" id="about">
+            <div class="container">
+
+                <h2 class="section-title">
+                    About <span class="red">SKAR</span>
+                </h2>
+
+                <p class="section-description">
+                    Learn about the brand and what it creates.
+                </p>
+
+                <div class="about-box reveal">
+
+                    <h3>Welcome to SKAR</h3>
+
+                    <p>
+                        SKAR is a technology brand created by
+                        Shaurya Pratap Singh. It focuses on developing
+                        applications that provide useful digital
+                        experiences.
+                    </p>
+
+                    <p>
+                        SKAR brings together creativity, technology,
+                        and innovation to turn ideas into real
+                        applications.
+                    </p>
+
+                    <p>
+                        Its projects explore different areas of
+                        technology, including artificial intelligence
+                        and productivity.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- APPS CREATED BY SKAR -->
+
+        <section class="section" id="apps">
+            <div class="container">
+
+                <h2 class="section-title">
+                    Apps Created by <span class="red">SKAR</span>
+                </h2>
+
+                <p class="section-description">
+                    Explore the applications developed under the SKAR
+                    brand.
+                </p>
+
+                <div class="apps-grid">
+
+                    <!-- SKAR NOVA AI -->
+
+                    <article class="app-card reveal">
+
+                        <div class="app-icon" aria-hidden="true">
+                            🤖
+                        </div>
+
+                        <span class="app-category">
+                            ARTIFICIAL INTELLIGENCE
+                        </span>
+
+                        <h3>SKAR NOVA AI</h3>
+
+                        <p>
+                            <strong>Creator:</strong>
+                            Shaurya Pratap Singh
+                        </p>
+
+                        <p>
+                            SKAR NOVA AI is an AI assistant designed
+                            to help users with questions, information,
+                            and everyday tasks.
+                        </p>
+
+                        <p>
+                            It aims to provide a helpful digital
+                            experience through AI-powered conversations.
+                        </p>
+
+                    </article>
+
+
+                    <!-- SKAR LIFE HUB -->
+
+                    <article class="app-card reveal">
+
+                        <div class="app-icon" aria-hidden="true">
+                            📱
+                        </div>
+
+                        <span class="app-category">
+                            PRODUCTIVITY
+                        </span>
+
+                        <h3>SKAR LIFE HUB</h3>
+
+                        <p>
+                            <strong>Creator:</strong>
+                            Shaurya Pratap Singh
+                        </p>
+
+                        <p>
+                            SKAR LIFE HUB is a productivity application
+                            designed to help users organize different
+                            aspects of their daily lives in one place.
+                        </p>
+
+                        <ul class="app-features">
+                            <li>Task Management</li>
+                            <li>Calendar</li>
+                            <li>Notes</li>
+                            <li>Goals</li>
+                            <li>Habit Tracking</li>
+                            <li>Finance Management</li>
+                        </ul>
+
+                    </article>
+
+                </div>
+
+
+                <!-- FUTURE APPS -->
+
+                <div class="future-card reveal">
+
+                    <div class="future-icon" aria-hidden="true">
+                        🚀
+                    </div>
+
+                    <h3>
+                        More Apps. More Possibilities.
+                    </h3>
+
+                    <p>
+                        SKAR may introduce more applications and
+                        digital products in the future as the brand
+                        continues to explore new ideas in technology.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SKAR VISION -->
+
+        <section class="section" id="vision">
+            <div class="container">
+
+                <div class="vision-box reveal">
+
+                    <h3>
+                        The Vision of <span class="red">SKAR</span>
+                    </h3>
+
+                    <p>
+                        SKAR aims to transform creative ideas into
+                        useful digital applications, explore new
+                        technologies, and create products that provide
+                        meaningful experiences for users.
+                    </p>
+
+                    <p style="margin-top: 15px;">
+                        Through its applications, SKAR seeks to combine
+                        creativity, functionality, and innovation in
+                        the digital world.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-logo">
+                SKAR<span>.</span>
+            </div>
+
+            <p>
+                Created by Shaurya Pratap Singh
+            </p>
+
+            <p class="footer-note">
+                © <span id="currentYear"></span> SKAR.
+                All rights reserved.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        // Update the copyright year automatically.
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+
+        // Mobile navigation menu.
+
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        menuButton.addEventListener("click", function () {
+
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+
+            menuButton.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+
+        // Close the mobile menu after selecting a section.
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("open");
+
+                menuButton.setAttribute("aria-expanded", "false");
+
+                menuButton.textContent = "☰";
+
+            });
+
+        });
+
+
+        // Reveal cards smoothly when they enter the screen.
+
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+
+            const observer = new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+            revealElements.forEach(function (element) {
+                observer.observe(element);
+            });
+
+        } else {
+
+            revealElements.forEach(function (element) {
+                element.classList.add("visible");
+            });
+
+        }
+    </script>
+
+</body>
+</html>
